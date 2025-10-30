@@ -1,0 +1,54 @@
+{
+  "name": "android-desktop",
+  "version": "1.0.0",
+  "description": "Android风格的Windows桌面替换应用",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --debug",
+    "dist": "electron-builder",
+    "install-electron": "npm install -g electron"
+  },
+  "keywords": [
+    "android",
+    "desktop",
+    "windows"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.your-company.your-app",
+    "productName": "安卓桌面启动器",
+    "copyright": "个人制作 © 2025 jky",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "renderer.js",
+      "node_modules",
+      "package.json",
+      "index.html",
+      "ico/icon.ico"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "ico/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
